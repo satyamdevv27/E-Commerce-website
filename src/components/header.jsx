@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "../styles/header.css"
+import {NavLink } from "react-router";
 
 function Header () {
 const [isopen , setisopen]= useState(false)
@@ -20,7 +21,7 @@ const [isopen , setisopen]= useState(false)
          <div className="logo"><h1>store</h1></div>
         <nav className={isopen ? "menumobile" : ""}>
           <ul>
-            <li>home</li>
+            <NavLink to="#"><li>home</li></NavLink>
             <li>products</li>
             <li>contacts us</li>
             <li>complaint</li>
