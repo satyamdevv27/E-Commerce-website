@@ -3,7 +3,7 @@
 function Home() {
   return (
     <div>
-      hii i am from home section
+     <h1> hii i am from home section</h1>
     </div>
   )
 }
