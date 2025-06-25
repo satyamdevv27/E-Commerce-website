@@ -1,47 +1,43 @@
-.products-container {
-  padding: 20px;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-.category-section {
-  margin-bottom: 40px;
+.products_cotainer{
+  padding: 0px 50px;
+   
 }
-
-.category-title {
-  font-size: 24px;
-  margin-bottom: 10px;
-  text-transform: capitalize;
+.products_cotainer img{
+    height: 100px;
+    width: 100px;
 }
-
-.category-products {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+.product_category{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    gap: 20px;
 }
-
-.product-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  width: 200px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.product_list{
+    display:  flex;
+    gap: 100px;
 }
-
-.product-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+.product_card{
+    border: 5px solid black;
+    border-radius: 10px;
+    display:  flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
 }
-
-.buy-button {
-  background-color: #007b5e;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.buy-button:hover {
-  background-color: #005a43;
+.product_card h3 {
+  font-size: 16px;
+  font-weight: bold;
+  overflow: hidden;          /* Hides overflowed text */
+  white-space: nowrap;       /* Use this for single line OR remove it for multi-line */
+  text-overflow: ellipsis;   /* Adds ellipsis */
+  width: 150px;              /* Adjust width to your design */
+  display: block;            /* Makes text behave like a block element */
 }
