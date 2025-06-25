@@ -28,6 +28,10 @@ display:  flex;
     list-style: none;
     gap: 40px;
 }
+
+nav ul li:hover{
+    border-bottom: 2px solid white;
+}
 .menu{
     display: none;
 }
@@ -56,3 +60,4 @@ background-color: gray;
 padding: 10px 30px 10px 30px;
 }
 }
+

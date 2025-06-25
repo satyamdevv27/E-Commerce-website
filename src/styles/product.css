@@ -5,7 +5,6 @@
 }
 .products_cotainer{
   padding: 0px 50px;
-   
 }
 .products_cotainer img{
     height: 100px;
@@ -17,10 +16,15 @@
     margin-top: 50px;
     margin-bottom: 100px;
     gap: 20px;
+
+   
 }
 .product_list{
     display:  flex;
+    flex-wrap: wrap;
+    
     gap: 100px;
+  
 }
 .product_card{
     border: 5px solid black;
@@ -30,14 +34,33 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 20px;
+    padding: 50px 20px;
 }
 .product_card h3 {
   font-size: 16px;
   font-weight: bold;
-  overflow: hidden;          /* Hides overflowed text */
-  white-space: nowrap;       /* Use this for single line OR remove it for multi-line */
-  text-overflow: ellipsis;   /* Adds ellipsis */
-  width: 150px;              /* Adjust width to your design */
-  display: block;            /* Makes text behave like a block element */
+  overflow: hidden;         
+  white-space: nowrap;      
+  text-overflow: ellipsis;   
+  width: 150px;              
+  display: block;          
+}
+.product_card button {
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+}
+.product_card button:hover{
+    background-color:  rgb(9, 83, 9);
+}
+
+
+
+@media screen and (max-width : 1000px) {
+    .product_list{
+        justify-content: center;
+    }
 }

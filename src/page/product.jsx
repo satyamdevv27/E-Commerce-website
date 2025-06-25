@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import "../styles/product.css";
 import "../styles/product.css"
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 function Products() {
   const [categories, setcategories] = useState([]);
   const [productsbycategory, setproductsbycategory] = useState({});
@@ -41,12 +44,21 @@ console.log(acc);
     allproducts();
   }, []);
 
+ var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <>
       <div className="products_cotainer">
         {Object.entries(productsbycategory).map(([category, products]) => (
           <div className="product_category" key={category}>
             <h2>{category.toLocaleUpperCase()}</h2>
+             {/* <Slider {...settings}> */}
             <div className="product_list">
               {
                 products.map((product)=>(
@@ -60,6 +72,7 @@ console.log(acc);
               }
               
             </div>
+            {/* </Slider> */}
           </div>
         ))}
       </div>
