@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../styles/product.css";
-import "../styles/product.css"
+import "../styles/product.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -10,6 +10,9 @@ function Products() {
 
   //to fetch all the categories
   const allproducts = async () => {
+
+try {
+  
     const response = await fetch(
       "https://fakestoreapi.com/products/categories"
     );
@@ -29,22 +32,26 @@ function Products() {
     );
     const organizedproducts = categoryproducts.reduce((acc, item) => {
       acc[item.category] = item.productdata;
-console.log(acc);
 
       return acc;
     }, {});
 
     setproductsbycategory(organizedproducts);
-    
-   
-    
+
+} catch (err) {
+  alert(err,"error in fetching the products")
+}
+
+
+
+
   };
   // to load the page if tere is any change
   useEffect(() => {
     allproducts();
   }, []);
 
- var settings = {
+  var settings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -58,19 +65,16 @@ console.log(acc);
         {Object.entries(productsbycategory).map(([category, products]) => (
           <div className="product_category" key={category}>
             <h2>{category.toLocaleUpperCase()}</h2>
-             {/* <Slider {...settings}> */}
+            {/* <Slider {...settings}> */}
             <div className="product_list">
-              {
-                products.map((product)=>(
-                  <div className="product_card" key={product.id}>
-                     <img src={product.image} alt="" />
-                     <h3>{product.title}</h3>
-                     <p>price : ₹{product.price}</p>
-                     <button>buy now</button>
-                  </div>
-                ))
-              }
-              
+              {products.map((product) => (
+                <div className="product_card" key={product.id}>
+                  <img src={product.image} alt="" />
+                  <h3>{product.title}</h3>
+                  <p>price : ₹{product.price}</p>
+                  <button>buy now</button>
+                </div>
+              ))}
             </div>
             {/* </Slider> */}
           </div>

@@ -1,11 +1,40 @@
-
+import "../styles/home.css";
+import electronics from "../assets/images/electonics.jpg";
+import jwellery from "../assets/images/jwellery.jpg"
+import mens from "../assets/images/men.jpg"
+import womens from "../assets/images/women.jpg"
 
 function Home() {
   return (
-    <div>
-     <h1> hii i am from home section</h1>
+    <div className="home_container">
+      <h1>our category </h1>
+      <div className="category_container">
+        <div className="card">
+          <img src={electronics} alt="" />
+          <h2>electonics</h2>
+          <button>explore</button>
+        </div>
+
+                <div className="card">
+          <img src={jwellery} alt="" />
+          <h2>jwellery</h2>
+          <button>explore</button>
+        </div>
+
+                <div className="card">
+          <img src={mens} alt="" />
+          <h2>men's clothing</h2>
+          <button>explore</button>
+        </div>
+
+                <div className="card">
+          <img src={womens} alt="" />
+          <h2>women's clothing</h2>
+          <button>explore</button>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

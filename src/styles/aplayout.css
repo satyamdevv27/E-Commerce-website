@@ -1,0 +1,29 @@
+/* Ensure the layout spans the entire viewport */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full height of the viewport */
+}
+
+/* Main content grows to push the footer down */
+.content {
+  flex: 1;
+  padding: 20px; /* Optional: Add padding */
+}
+
+/* Footer styling */
+footer {
+  background-color: #333; /* Example background color */
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Optional styling for the header */
+header {
+  background-color: #444; /* Example background color */
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
