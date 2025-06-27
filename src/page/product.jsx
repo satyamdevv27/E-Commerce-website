@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import "../styles/product.css";
 import "../styles/product.css";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 function Products() {
   const [categories, setcategories] = useState([]);
   const [productsbycategory, setproductsbycategory] = useState({});
@@ -51,13 +49,7 @@ try {
     allproducts();
   }, []);
 
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
+
 
   return (
     <>
@@ -72,11 +64,11 @@ try {
                   <img src={product.image} alt="" />
                   <h3>{product.title}</h3>
                   <p>price : ₹{product.price}</p>
-                  <button>buy now</button>
+                  <Link to={`/product/${product.id}`}>
+                  <button>buy now</button></Link>
                 </div>
               ))}
             </div>
-            {/* </Slider> */}
           </div>
         ))}
       </div>

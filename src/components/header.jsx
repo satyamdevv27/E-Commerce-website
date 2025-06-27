@@ -19,7 +19,7 @@ function Header() {
           </div>
           <nav className={isopen ? "menumobile" : ""}>
             <ul>
-              <NavLink to="/home">
+              <NavLink to="/">
                 <li>home</li>
               </NavLink>
               <NavLink to="/product">

@@ -3,6 +3,7 @@ import Home from "./page/home";
 import Complaint from "./page/complaint";
 import Product from "./page/product";
 import Contact from "./page/contact";
+import Singleproduct from "./page/Singleproduct";
 import { createBrowserRouter, RouterProvider ,  } from "react-router-dom";
 
 const router = createBrowserRouter ([
@@ -11,7 +12,7 @@ const router = createBrowserRouter ([
     element : <Applayout/>,
     children : [
       {
-        path: "/home",
+        path: "/",
         element : <Home/>
       },
       {
@@ -21,6 +22,10 @@ const router = createBrowserRouter ([
       {
         path:"/product",
         element: <Product/>
+      },
+      {
+        path: "/product/:id",
+        element : <Singleproduct/>
       },
       {
         path : "/Complaint",
