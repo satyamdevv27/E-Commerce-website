@@ -1,17 +1,19 @@
-import { use, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../styles/Singleproduct.css";
+import { NavLink } from "react-router-dom";
+import { Cartcontext } from "./cartcontext";
 function Singleproduct() {
   const { id } = useParams();
   const [product, setproduct] = useState(null);
-
+  const { addtocart } = useContext(Cartcontext);
 
   useEffect(() => {
     const fetchproduct = async () => {
       try {
         const response = await fetch(`https://fakestoreapi.com/products/${id}`);
         const data = await response.json();
-        console.log(data);
+       
         setproduct(data);
       } catch (error) {
         alert(error);
@@ -26,6 +28,15 @@ function Singleproduct() {
 
   const MAX_LENGTH = 200;
 
+  const handlecart = () => {
+    addtocart({
+      id: product.id,
+      name: product.title,
+      price: product.price,
+    });
+    console.log("button is clicked");
+    
+  };
 
   return (
     <div className="page_container">
@@ -42,7 +53,9 @@ function Singleproduct() {
         <h3>ratings : {product.rating.rate}</h3>
         <div className="btns">
           <button>buy now</button>
-          <button>add to cart</button>
+          
+            <button onClick={handlecart}>add to cart</button>
+         
         </div>
       </div>
     </div>

@@ -1,9 +1,10 @@
 import Applayout from "./components/applayout";
 import Home from "./page/home";
-import Complaint from "./page/complaint";
+import { Cartprovider } from "./page/cartcontext";
 import Product from "./page/product";
 import Contact from "./page/contact";
 import Singleproduct from "./page/Singleproduct";
+import Cart from "./page/Cart";
 import { createBrowserRouter, RouterProvider ,  } from "react-router-dom";
 
 const router = createBrowserRouter ([
@@ -28,8 +29,8 @@ const router = createBrowserRouter ([
         element : <Singleproduct/>
       },
       {
-        path : "/Complaint",
-        element : <Complaint/>
+        path : "/cart",
+        element : <Cart/>
       }
     ]
   }
@@ -38,7 +39,9 @@ const router = createBrowserRouter ([
 function App() {
   return (
     <>
-      <RouterProvider router={router}/>
+      <Cartprovider>
+        <RouterProvider router={router}/>
+      </Cartprovider>
     </>
   );
 }

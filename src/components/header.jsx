@@ -28,8 +28,8 @@ function Header() {
               <NavLink to="/contact">
                 <li>contacts us</li>
               </NavLink>
-              <NavLink to="/Complaint">
-                <li>complaint</li>
+              <NavLink to="/cart">
+                <li>cart</li>
               </NavLink>
             </ul>
           </nav>
