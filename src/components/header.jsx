@@ -1,8 +1,10 @@
 import { useState } from "react";
 import "../styles/header.css";
 import { NavLink } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate()
   const [isopen, setisopen] = useState(false);
 
   const handleclick = () => {
@@ -15,7 +17,7 @@ function Header() {
       <div className="header">
         <div className="wrap-header">
           <div className="logo">
-            <h1>store</h1>
+            <h1 onClick={()=>(navigate("/"))}>store</h1>
           </div>
           <nav className={isopen ? "menumobile" : ""}>
             <ul>

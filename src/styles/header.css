@@ -10,6 +10,9 @@
     position: sticky;
    
 }
+.logo h1{
+    cursor: pointer;
+}
 .wrap-header{
     height: 10vh;
     max-width: 90%;

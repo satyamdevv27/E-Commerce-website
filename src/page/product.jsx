@@ -40,7 +40,11 @@ try {
   alert(err,"error in fetching the products")
 }
 
-
+if(!productsbycategory){
+  return(
+  <div>please wait .....</div>
+  )
+}
 
 
   };
@@ -54,23 +58,29 @@ try {
   return (
     <>
       <div className="products_cotainer">
+ {Object.keys(productsbycategory).length === 0 ? (
+      <div className="loading"><h1>Please wait...</h1></div>
+    ) : (
+      <div className="products_cotainer">
         {Object.entries(productsbycategory).map(([category, products]) => (
           <div className="product_category" key={category}>
-            <h2>{category.toLocaleUpperCase()}</h2>
-            {/* <Slider {...settings}> */}
+            <h2>{category.toUpperCase()}</h2>
             <div className="product_list">
               {products.map((product) => (
                 <div className="product_card" key={product.id}>
-                  <img src={product.image} alt="" />
+                  <img src={product.image} alt={product.title} />
                   <h3>{product.title}</h3>
-                  <p>price : ₹{product.price}</p>
+                  <p>Price: ₹{product.price}</p>
                   <Link to={`/product/${product.id}`}>
-                  <button>buy now</button></Link>
+                    <button>Buy Now</button>
+                  </Link>
                 </div>
               ))}
             </div>
           </div>
         ))}
+      </div>
+    )}
       </div>
     </>
   );
