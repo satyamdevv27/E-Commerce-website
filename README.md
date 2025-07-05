@@ -1,12 +1,42 @@
-# React + Vite
+# 🛍️ React E-Commerce Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple **e-commerce web app** built using **React.js**, featuring:
 
-Currently, two official plugins are available:
+- 🛒 Add to Cart functionality
+- 🧮 Quantity update and total price calculation
+- 💳 Razorpay Payment Gateway integration (Test Mode)
+- ✅ Simulated product delivery after payment
+- 📝 LocalStorage persistence
+- 🎉 Thank You page after checkout
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- View product listings (from Fake Store API or manually added)
+- Add and remove products from the cart
+- Increase/decrease quantity of products
+- Calculate total price dynamically
+- Secure payment simulation using Razorpay (Test Mode)
+- Auto-clear cart after successful payment
+- Delivery confirmation message or redirect to a thank-you page
+
+---
+
+## 🛠️ Tech Stack
+
+- ⚛️ React (Vite or CRA)
+- 💳 Razorpay (Frontend-only, test mode)
+- 📦 LocalStorage (to persist cart)
+- 📄 React Context API (for cart management)
+- 🖼️ CSS (basic styling)
+
+---
+
+## 📦 Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/react-ecommerce-store.git
+cd react-ecommerce-store
